@@ -1,6 +1,12 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
+
+const navLinks = [
+  { name: "Services", path: "/services" },
+  { name: "Contact", path: "/contact" }
+]
 
 const Home = () => {
   return (
@@ -35,18 +41,19 @@ const Home = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            <a
-              href="/services"
-              className="bg-white text-dark-blue px-8 py-3 rounded-full inline-block font-medium mr-4 hover:bg-opacity-90 transition-all"
-            >
-              Our Services
-            </a>
-            <a
-              href="/contact"
-              className="border border-white px-8 py-3 rounded-full inline-block font-medium hover:bg-white hover:bg-opacity-10 transition-all"
-            >
-              Contact Us
-            </a>
+            {navLinks.map((link, index) => (
+              <Link
+                key={link.name}
+                to={link.path}
+                className={`${
+                  index === 0
+                    ? "bg-white text-dark-blue hover:bg-opacity-90 mr-4"
+                    : "border border-white hover:bg-white hover:bg-opacity-10"
+                } px-8 py-3 rounded-full inline-block font-medium transition-all`}
+              >
+                {link.name}
+              </Link>
+            ))}
           </motion.div>
         </div>
       </div>
