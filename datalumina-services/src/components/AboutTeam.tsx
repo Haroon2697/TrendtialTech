@@ -32,7 +32,7 @@ const teamMembers = [
 export default function AboutTeam() {
   const [mousePositions, setMousePositions] = useState(teamMembers.map(() => ({ x: 0, y: 0 })))
 
-  const handleMouseMove = (index) => (e) => {
+  const handleMouseMove = (index: number) => (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const rect = e.currentTarget.getBoundingClientRect()
     const newMousePositions = [...mousePositions]
     newMousePositions[index] = {
@@ -41,6 +41,7 @@ export default function AboutTeam() {
     }
     setMousePositions(newMousePositions)
   }
+  
 
   return (
     <section className="bg-[#020824] text-white py-16 md:py-24 relative overflow-hidden">
