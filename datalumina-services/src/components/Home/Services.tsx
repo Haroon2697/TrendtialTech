@@ -1,6 +1,6 @@
 import Slider from "../Home/Slider";
 
-const Services: React.FC = () => {
+const Services= () => {
     return (
         <section className="h-screen w-screen bg-gradient-to-br from-transparent via-[rgb(0,1,15)] to-[rgb(0,1,15)] flex flex-col px-4">
             <div className="ml-20 mt-20">

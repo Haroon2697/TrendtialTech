@@ -6,6 +6,7 @@ import { Link } from "react-router-dom"
 import ClientLogos from "../components/Home/ClientLogos"
 import Services from "../components/Home/Services"
 import CaseStudies from "../components/CaseStudies"
+import AboutUs from "../components/Home/AboutUs"
 
 const navLinks = [
   { name: "Services", path: "/services" },
@@ -70,6 +71,7 @@ const Home = () => {
       <ClientLogos />
       <Services />
       <CaseStudies />
+      <AboutUs />
 
     </main>
   )
