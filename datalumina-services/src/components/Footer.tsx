@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 const Footer = () => {
   return (
     <footer className="w-full py-12 text-white overflow-hidden bg-[#03002c]">
+      
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
           {/* First column */}
