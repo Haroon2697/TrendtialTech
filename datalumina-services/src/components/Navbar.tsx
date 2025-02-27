@@ -29,10 +29,10 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "py-4 bg-[#03002c]/90 backdrop-blur-md" : "py-6 bg-transparent"
+        isScrolled ? "py-6 bg-[#03002c]/90 backdrop-blur-md" : "py-6 bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 flex justify-between items-center">
+      <div className="container mx-auto px-6 flex justify-between items-center relative">
         <Link to="/" className="flex items-center">
           <div className="flex items-center">
             <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -63,20 +63,34 @@ const Navbar = () => {
 
         <Link to="/contact">
           <motion.button
-            whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.85)", scale: 1.02 }} // Button hover effect
+            whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.85)", scale: 1.02 }}
             className="bg-white text-[#03002c] px-5 py-2 rounded-full flex items-center gap-2 text-sm font-medium transition-all duration-300"
           >
             Contact
             <motion.span
               className="flex"
-              initial={{ rotate: -45, x: -2, y: -2 }} // Arrow starts slightly offset
-              whileHover={{ x: 0, y: -2 }} // Arrow animation on button hover
+              initial={{ rotate: -45, x: -2, y: -2 }}
+              whileHover={{ x: 0, y: -2 }}
               transition={{ duration: 0.2 }}
             >
               <ArrowRight className="w-4 h-4" />
             </motion.span>
           </motion.button>
         </Link>
+
+        {/* Glowing Border Line Effect when Scrolled */}
+        {isScrolled && (
+          <motion.div
+            className="absolute -bottom-6 left-0 w-full h-[1px] from-[#03002c] via-blue-500 to-[#03002c] bg-gradient-to-r"
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            style={{
+              transformOrigin: "center",
+              boxShadow: "0px 0px 10px 3px rgba(0, 140, 255, 0.1)",
+            }}
+          />
+        )}
       </div>
     </nav>
   )
