@@ -8,7 +8,7 @@ import GenAILaunchpad from "./pages/GenAILaunchpad"
 import Contact from "./pages/Contact"
 import Navbar from "./components/Navbar"
 import AnimatedBackground from "./components/AnimatedBackground"
-
+import Footer from "./components/Footer"
 import { useEffect, useState } from "react"
 
 
@@ -35,6 +35,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
           </Routes>
           </main>
+          <Footer />
         </div>
       </div>
     </Router>

@@ -4,6 +4,8 @@
   --dark-blue: #03002c;
 }
 
+
+
 @keyframes ripple {
   0% {
     transform: translate(-50%, -50%) scale(0.8);
@@ -65,4 +67,5 @@ body {
 .glow-hover:hover {
   box-shadow: 0 0 30px rgba(59, 130, 246, 0.7);
 }
+
 
