@@ -7,6 +7,7 @@ import ClientLogos from "../components/Home/ClientLogos"
 import Services from "../components/Home/Services"
 import CaseStudies from "../components/CaseStudies"
 import AboutUs from "../components/Home/AboutUs"
+import Insights from "../components/Home/Insights"
 
 const navLinks = [
   { name: "Services", path: "/services" },
@@ -72,6 +73,7 @@ const Home = () => {
       <Services />
       <CaseStudies />
       <AboutUs />
+      <Insights />
 
     </main>
   )
