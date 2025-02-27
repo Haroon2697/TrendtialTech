@@ -3,7 +3,9 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 
-import ClientLogos from "../components/ClientLogos"
+import ClientLogos from "../components/Home/ClientLogos"
+import Services from "../components/Home/Services"
+import CaseStudies from "../components/CaseStudies"
 
 const navLinks = [
   { name: "Services", path: "/services" },
@@ -66,7 +68,9 @@ const Home = () => {
       </motion.div>
 
       <ClientLogos />
-      
+      <Services />
+      <CaseStudies />
+
     </main>
   )
 }
