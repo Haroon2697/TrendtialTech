@@ -66,7 +66,7 @@ export default function AboutHero() {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <motion.h1
-          className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
+          className="text-2xl md:text-4xl lg:text-5xl font-light text-white mb-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 1 }}
@@ -76,7 +76,7 @@ export default function AboutHero() {
         </motion.h1>
 
         <motion.p
-          className="text-white text-sm md:text-base leading-relaxed"
+          className="text-gray-300 mx-16 text-sm md:text-base leading-relaxed font-light"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 1 }}

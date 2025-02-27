@@ -52,7 +52,7 @@ export default function AboutTeam() {
           className="max-w-2xl mb-16"
         >
           <motion.h2
-            className="text-5xl md:text-6xl font-bold mb-6"
+            className="text-3xl md:text-4xl mb-6"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -60,7 +60,7 @@ export default function AboutTeam() {
             Our team
           </motion.h2>
           <motion.p
-            className="text-gray-400 text-lg"
+            className="text-gray-300 text-md"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -111,7 +111,7 @@ export default function AboutTeam() {
                   <div className="w-[200px] h-[150px] rounded-full bg-gradient-to-b from-[#7199ff] via-[#004cfe] to-transparent opacity-100 blur-[120px]" />
                 </div>
 
-                <div className="relative h-[400px] overflow-hidden m-4 rounded-2xl">
+                <div className="relative h-[400px] overflow-hidden mx-4 mt-4 rounded-2xl">
                   <Image
                     src={member.image || "/placeholder.svg"}
                     alt={member.name}
@@ -120,15 +120,15 @@ export default function AboutTeam() {
                   />
                 </div>
                 <motion.div
-                  className="p-8 flex justify-between items-center"
+                  className="p-6 flex justify-between items-center"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.3 }}
                 >
                   <div>
-                    <h3 className="text-2xl font-semibold mb-2">{member.name}</h3>
-                    <p className="text-gray-400 mb-6 text-lg">{member.role}</p>
+                    <h3 className="text-xl font-light">{member.name}</h3>
+                    <p className="text-gray-600 text-base">{member.role}</p>
                   </div>
                   <motion.a
                     href={member.linkedin}
