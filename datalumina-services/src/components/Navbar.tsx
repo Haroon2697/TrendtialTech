@@ -193,7 +193,7 @@ const Navbar = () => {
         {/* Glowing Border Line Effect when Scrolled */}
         {isScrolled && (
           <motion.div
-            className="absolute -bottom-6 left-0 w-full h-[1px] from-[#03002c] via-blue-500 to-[#03002c] bg-gradient-to-r"
+            className="absolute -bottom-4 left-0 w-full h-[1px] from-[#03002c] via-blue-500 to-[#03002c] bg-gradient-to-r"
             initial={{ opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
