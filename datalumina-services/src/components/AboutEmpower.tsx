@@ -29,7 +29,7 @@ export default function AboutEmpower() {
       {/* First Section */}
       <motion.div
         ref={firstSectionRef}
-        className="container mx-auto px-4 sm:px-8 lg:px-24 py-12 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-6 items-center relative z-10"
+        className="container mx-auto px-4 sm:px-8 lg:px-24 py-12 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-6 items-start relative z-10"
         initial={{ opacity: 0, y: 30 }}
         animate={firstSectionInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 1.2 }}
@@ -51,7 +51,9 @@ export default function AboutEmpower() {
             transition={{ delay: 0.6, duration: 1.5 }}
           >
             We are systematic innovators, developers, and strategic guides, transforming how businesses and developers
-            harness the forces of data and AI.
+            harness the forces of data and AI. Our approach focuses on delivering measurable results through cutting-edge
+            technology solutions. We prioritize long-term partnerships, ensuring our clients stay ahead in the rapidly
+            evolving tech landscape while maintaining ethical AI practices and data security.
           </motion.p>
         </div>
 
@@ -63,7 +65,7 @@ export default function AboutEmpower() {
           transition={{ delay: 0.4, duration: 1.5 }}
         >
           <motion.div
-            className="relative h-[250px] sm:h-[350px] md:h-[450px] rounded-2xl overflow-hidden shadow-lg"
+            className="relative h-[200px] sm:h-[250px] md:h-[350px] rounded-2xl overflow-hidden shadow-lg"
             transition={{ duration: 0.4 }}
           >
             <img
@@ -74,30 +76,29 @@ export default function AboutEmpower() {
           </motion.div>
 
           <motion.div
-            className="relative h-[250px] sm:h-[350px] md:h-[450px] rounded-2xl overflow-hidden shadow-lg"
+            className="relative h-[200px] sm:h-[250px] md:h-[350px] rounded-2xl overflow-hidden shadow-lg"
             transition={{ duration: 0.4 }}
           >
             <img
-              src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-              alt="Developer working with laptop"
+              src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              alt="Team collaborating on project"
               className="w-full h-full object-cover"
             />
           </motion.div>
-
         </motion.div>
       </motion.div>
 
       {/* Second Section */}
       <motion.div
         ref={secondSectionRef}
-        className="container mx-auto px-4 sm:px-8 lg:px-24 py-12 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-6 items-center relative z-10"
+        className="container mx-auto px-4 sm:px-8 lg:px-24 py-12 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-6 items-start relative z-10"
         initial={{ opacity: 0, y: 30 }}
         animate={secondSectionInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 1.0 }}
       >
         <motion.div
           ref={secondImageRef}
-          className="relative h-[250px] sm:h-[350px] md:h-[450px] rounded-2xl overflow-hidden shadow-lg"
+          className="relative h-[200px] sm:h-[250px] md:h-[380px] rounded-2xl overflow-hidden shadow-lg"
           initial={{ opacity: 0, x: -70 }}
           animate={secondImageInView ? { opacity: 1, x: 0 } : {}}
           transition={{ delay: 0.4, duration: 1.5 }}
@@ -119,20 +120,24 @@ export default function AboutEmpower() {
             Empowering businesses and developers
           </motion.h2>
 
-          <motion.p className="text-gray-400 text-sm font-extralight leading-relaxed mr-32"
-           initial={{ opacity: 0, x: 70 }}
-           animate={secondTextInView ? { opacity: 1, x: 0 } : {}}
-           transition={{ delay: 0.3, duration: 1.5 }}
-           >
+          <motion.p
+            className="text-gray-400 text-sm font-extralight leading-relaxed mr-32"
+            initial={{ opacity: 0, x: 70 }}
+            animate={secondTextInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ delay: 0.3, duration: 1.5 }}
+          >
             We identify what creates actual value, not just buzz. Our solutions are built for production, not just
-            presentations.
+            presentations. We work closely with our clients to understand their unique challenges, delivering customized
+            AI and data strategies that drive real business growth. Our team combines technical expertise with strategic
+            vision to ensure sustainable success in a competitive market.
           </motion.p>
 
-          <motion.div className="flex items-center text-sm font-extralight leading-relaxed text-gray-400 pt-6"
-           initial={{ opacity: 0, x: 70 }}
-           animate={secondTextInView ? { opacity: 1, x: 0 } : {}}
-           transition={{ delay: 0.3, duration: 1.5 }}
-           >
+          <motion.div
+            className="flex items-center text-sm font-extralight leading-relaxed text-gray-400 pt-6"
+            initial={{ opacity: 0, x: 70 }}
+            animate={secondTextInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ delay: 0.3, duration: 1.5 }}
+          >
             <MapPin className="w-4 h-4 mr-2" />
             <span>Communicatieweg Oost 12, 1566 PK Assendelft</span>
           </motion.div>
