@@ -201,7 +201,7 @@ export default function InsightFilter() {
 
         {/* Filter Buttons */}
         <motion.div
-          className="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-4 mb-8 sm:mb-12 md:mb-16 max-w-screen-xl mx-auto"
+          className="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-3 mb-8 sm:mb-12 md:mb-16 max-w-screen-xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -223,7 +223,7 @@ export default function InsightFilter() {
         </motion.div>
 
         {/* Cards Grid */ }
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-12 sm:mb-20">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-2 mb-12 sm:mb-20">
       <AnimatePresence mode="wait">
         {filteredCards.map((card, index) => (
           <motion.article
