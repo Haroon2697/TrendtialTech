@@ -1,5 +1,325 @@
-"use client"
+// // "use client"
+// // import { motion } from "framer-motion"
+// // import { useEffect, useState } from "react"
 
+// // const TechStack = () => {
+// //   const [isVisible, setIsVisible] = useState(false)
+
+// //   useEffect(() => {
+// //     setIsVisible(true)
+// //   }, [])
+
+// //   // Calculate positions on a flatter arc
+// //   const calculateArcPosition = (index: number, total: number, radius: number) => {
+// //     const angleStep = Math.PI / (total - 1) // Semi-circle
+// //     const angle = index * angleStep
+// //     return {
+// //       x: Math.cos(angle) * radius,
+// //       y: Math.sin(angle) * radius * 0.15, // Make the arc much flatter
+// //     }
+// //   }
+
+// //   // Updated tech stack items with correct icons and sizes
+// //   const techItems = [
+// //     {
+// //       icon: (
+// //         <path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.186.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.186.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.186.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.185-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.185-.186h-2.12a.186.186 0 00-.185.185v1.888c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-.709-.614-1.324-1.01-1.803a6.52 6.52 0 00-1.654-1.346c.365-.636.63-1.353.73-2.178.133-1.107-.019-2.154-.571-2.654-.325-.293-.752-.439-1.27-.439-.937 0-1.919.539-2.575 1.228-.829-.187-1.99-.349-3.013-.349-.1 0-.2.008-.3.01-.789-.898-2.079-1.243-3.307-1.243-.144 0-.282.006-.418.018-1.412.116-2.585.831-3.038 1.659a3.58 3.58 0 00-.435 1.872c.013.362.065.729.167 1.101-.639.088-1.304.253-1.902.521C1.9 6.376 1.325 7.261.97 8.319a4.417 4.417 0 00.144 3.313c.477.962 1.317 1.669 2.368 1.985.162.049.332.087.503.124.386 1.436 1.107 2.73 2.105 3.642.833.758 1.807 1.195 2.841 1.195.168 0 .334-.011.498-.032a4.025 4.025 0 001.28-.425c.781 1.947 1.711 3.325 2.279 3.325.112 0 .201-.038.271-.107.132-.135.177-.366.127-.63-.148-.772-1.031-2.012-1.825-3.319.274-.044.54-.103.796-.176 1.246-.36 2.264-1.08 2.94-2.079a5.03 5.03 0 00.899-3.339c1.904.104 3.553.871 4.084 1.71.263.417.276.817.041 1.195-.591.954-2.517 1.282-4.316 1.217-.215-.008-.429.137-.437.351-.008.215.137.429.351.437.123.005.247.007.371.007 1.535 0 2.844-.252 3.605-.975.503-.478.67-1.112.495-1.883-.268-1.167-1.638-2.193-3.987-2.573.011-.128.017-.255.017-.382 0-1.215-.385-2.433-1.146-3.631.909-.402 1.573-.935 1.904-1.609.507-1.033.184-2.096-.681-2.745" fill="currentColor"/>
+// //       ),
+// //       size: "w-16 h-16",
+// //       color: "bg-blue-900/80",
+// //     },
+// //     {
+// //       icon: (
+// //         <path d="M11.7 12.5h1c.2 0 .3-.1.3-.3v-1c0-.2-.1-.3-.3-.3h-1c-.2 0-.3.1-.3.3v1c0 .2.1.3.3.3M17.1 9H16V7.7c0-.8-.6-1.4-1.4-1.4h-1.1V5.1c0-.8-.6-1.4-1.4-1.4h-1.1c-.8 0-1.4.6-1.4 1.4v1.1H8.5c-.8 0-1.4.6-1.4 1.4V9H6c-.8 0-1.4.6-1.4 1.4v1.1c0 .8.6 1.4 1.4 1.4h1.1v1.1c0 .8.6 1.4 1.4 1.4h1.1v1.1c0 .8.6 1.4 1.4 1.4h1.1c.8 0 1.4-.6 1.4-1.4v-1.1h1.1c.8 0 1.4-.6 1.4-1.4v-1.1h1.1c.8 0 1.4-.6 1.4-1.4V10c0-.6-.6-1-1.4-1" fill="currentColor"/>
+// //       ),
+// //       size: "w-20 h-20",
+// //       color: "bg-blue-800",
+// //     },
+// //     {
+// //       icon: (
+// //         <path d="M13 10V3L4 14h7v7l9-11h-7z" fill="currentColor" />
+// //       ),
+// //       size: "w-16 h-16",
+// //       color: "bg-blue-700",
+// //     },
+// //     {
+// //       icon: (
+// //         <path d="M12 3c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm3.9 11.5l-.5.5-3.4-3.4-3.4 3.4-.5-.5 3.4-3.4-3.4-3.4.5-.5 3.4 3.4 3.4-3.4.5.5-3.4 3.4 3.4 3.4z" fill="currentColor"/>
+// //       ),
+// //       size: "w-20 h-20",
+// //       color: "bg-blue-600",
+// //     },
+// //     {
+// //       icon: (
+// //         <path d="M10.2 12.2C9.9 13.2 9 14 7.9 14c-1.3 0-2.4-1.1-2.4-2.4 0-1.1.8-2 1.8-2.3C7.5 8.9 7.9 8.7 8.2 8.4c.6-.6.9-1.3.9-2.1V4.2c0-.3.2-.5.5-.5s.5.2.5.5v2.1c0 1.1-.4 2.1-1.2 2.8-.3.3-.7.5-1.1.7-.7.2-1.2.8-1.2 1.5 0 .9.7 1.6 1.6 1.6.7 0 1.3-.5 1.5-1.2.1-.3.4-.4.7-.3.3.1.4.4.3.7zm7.3-.6c0 1.3-1.1 2.4-2.4 2.4-1.1 0-2-.8-2.3-1.8-.1-.3.1-.6.3-.7.3-.1.6.1.7.3.2.7.8 1.2 1.5 1.2.9 0 1.6-.7 1.6-1.6 0-.7-.5-1.3-1.2-1.5-.4-.1-.8-.4-1.1-.7-.8-.8-1.2-1.8-1.2-2.8V4.2c0-.3.2-.5.5-.5s.5.2.5.5v2.1c0 .8.3 1.5.9 2.1.3.3.6.5.9.7 1 .3 1.8 1.2 1.8 2.3z" fill="currentColor"/>
+// //       ),
+// //       size: "w-16 h-16",
+// //       color: "bg-blue-700",
+// //     },
+// //     {
+// //       icon: (
+// //         <path d="M12 2L8 12l4 10 4-10z" fill="currentColor" />
+// //       ),
+// //       size: "w-14 h-14",
+// //       color: "bg-blue-800",
+// //     },
+// //     {
+// //       icon: (
+// //         <path d="M11.5 2.9c-4.1 0-7.5 3.4-7.5 7.5v.1c-1.4.3-2.5 1.6-2.5 3.1 0 1.7 1.3 3 3 3h.5c.4 0 .7-.3.7-.7s-.3-.7-.7-.7h-.5c-.9 0-1.6-.7-1.6-1.6 0-1 .8-1.8 1.8-1.6.3 0 .5-.1.6-.4.1-.2.1-.5 0-.7-.1-.2-.1-.3-.1-.5 0-3.4 2.8-6.2 6.2-6.2 2.8 0 5.3 1.9 6 4.7.1.3.4.5.7.5.9-.1 1.7.6 1.7 1.5 0 .8-.7 1.5-1.5 1.5h-.5c-.4 0-.7.3-.7.7s.3.7.7.7h.5c1.7 0 3-1.3 3-3 0-1.5-1.1-2.8-2.5-3.1v-.1c0-4.2-3.4-7.5-7.5-7.5zm-.9 8.2c-.3-.3-.7-.3-.9 0l-2.2 2.2c-.3.3-.3.7 0 .9.3.3.7.3.9 0l1.1-1.1v5.1c0 .4.3.7.7.7s.7-.3.7-.7v-5.1l1.1 1.1c.3.3.7.3.9 0 .3-.3.3-.7 0-.9l-2.2-2.2z" fill="currentColor"/>
+// //       ),
+// //       size: "w-12 h-12",
+// //       color: "bg-blue-900/80",
+// //     },
+// //   ]
+
+// //   return (
+// //     <section className="relative py-20 overflow-hidden min-h-[600px]">
+// //       <motion.div
+// //         initial={{ opacity: 0, y: 20 }}
+// //         animate={{ opacity: 1, y: 0 }}
+// //         transition={{ duration: 0.8 }}
+// //         className="container mx-auto px-4 text-center"
+// //       >
+// //         <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-32">
+// //           We tackle data challenges
+// //           <br />
+// //           across the full stack
+// //         </h2>
+
+// //         <div className="relative h-[400px]">
+// //           {/* Ripple Effects */}
+// //           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+// //             {[1, 2, 3].map((i) => (
+// //               <div
+// //                 key={i}
+// //                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-blue-500/10"
+// //                 style={{
+// //                   width: `${i * 200}px`,
+// //                   height: `${i * 200}px`,
+// //                   animation: `ripple 4s linear ${i * 0.5}s infinite`,
+// //                 }}
+// //               />
+// //             ))}
+// //           </div>
+
+// //           {/* Tech Stack Icons */}
+// //           <div className="relative w-full max-w-6xl mx-auto">
+// //             {techItems.map((item, index) => {
+// //               const position = calculateArcPosition(index, techItems.length, 450)
+// //               return (
+// //                 <motion.div
+// //                   key={index}
+// //                   className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+// //                   initial={{ opacity: 0, y: 50 }}
+// //                   animate={{
+// //                     opacity: isVisible ? 1 : 0,
+// //                     x: position.x,
+// //                     y: position.y,
+// //                   }}
+// //                   transition={{
+// //                     duration: 0.8,
+// //                     delay: index * 0.1,
+// //                     y: {
+// //                       duration: 4,
+// //                       repeat: Number.POSITIVE_INFINITY,
+// //                       repeatType: "reverse",
+// //                       ease: "easeInOut",
+// //                       offset: index * 0.1,
+// //                     },
+// //                   }}
+// //                 >
+// //                   <div
+// //                     className={`${item.size} ${item.color} rounded-full flex items-center justify-center relative group transition-all duration-300`}
+// //                     style={{
+// //                       boxShadow: "0 0 20px rgba(37, 99, 235, 0.2)",
+// //                     }}
+// //                   >
+// //                     <div className="absolute inset-0 rounded-full bg-blue-500/20 group-hover:bg-blue-500/30 transition-all duration-300" />
+// //                     <svg viewBox="0 0 24 24" className="text-white relative z-10 w-3/5 h-3/5">
+// //                       {item.icon}
+// //                     </svg>
+// //                   </div>
+// //                 </motion.div>
+// //               )
+// //             })}
+// //           </div>
+// //         </div>
+// //       </motion.div>
+// //     </section>
+// //   )
+// // }
+
+// // export default TechStack
+// "use client"
+// import { motion } from "framer-motion"
+// import { useEffect, useState } from "react"
+
+// const TechStack = () => {
+//   const [isVisible, setIsVisible] = useState(false)
+
+//   useEffect(() => {
+//     setIsVisible(true)
+//   }, [])
+
+//   // Tech stack items with updated icons and specific positioning
+//   const techItems = [
+//     {
+//       // Terraform (top)
+//       icon: (
+//         <path d="M12 2L8 12l4 10 4-10z" fill="currentColor" />
+//       ),
+//       size: "w-14 h-14",
+//       color: "bg-blue-700",
+//       position: { x: 0, y: -150 }
+//     },
+//     {
+//       // Cloud (top right)
+//       icon: (
+//         <path d="M11.5 2.9c-4.1 0-7.5 3.4-7.5 7.5v.1c-1.4.3-2.5 1.6-2.5 3.1 0 1.7 1.3 3 3 3h.5c.4 0 .7-.3.7-.7s-.3-.7-.7-.7h-.5c-.9 0-1.6-.7-1.6-1.6 0-1 .8-1.8 1.8-1.6.3 0 .5-.1.6-.4.1-.2.1-.5 0-.7-.1-.2-.1-.3-.1-.5 0-3.4 2.8-6.2 6.2-6.2 2.8 0 5.3 1.9 6 4.7.1.3.4.5.7.5.9-.1 1.7.6 1.7 1.5 0 .8-.7 1.5-1.5 1.5h-.5c-.4 0-.7.3-.7.7s.3.7.7.7h.5c1.7 0 3-1.3 3-3 0-1.5-1.1-2.8-2.5-3.1v-.1c0-4.2-3.4-7.5-7.5-7.5zm-.9 8.2c-.3-.3-.7-.3-.9 0l-2.2 2.2c-.3.3-.3.7 0 .9.3.3.7.3.9 0l1.1-1.1v5.1c0 .4.3.7.7.7s.7-.3.7-.7v-5.1l1.1 1.1c.3.3.7.3.9 0 .3-.3.3-.7 0-.9l-2.2-2.2z" fill="currentColor"/>
+//       ),
+//       size: "w-14 h-14",
+//       color: "bg-blue-700",
+//       position: { x: 120, y: -110 }
+//     },
+//     {
+//       // Test Tubes (left)
+//       icon: (
+//         <path d="M10.2 12.2C9.9 13.2 9 14 7.9 14c-1.3 0-2.4-1.1-2.4-2.4 0-1.1.8-2 1.8-2.3C7.5 8.9 7.9 8.7 8.2 8.4c.6-.6.9-1.3.9-2.1V4.2c0-.3.2-.5.5-.5s.5.2.5.5v2.1c0 1.1-.4 2.1-1.2 2.8-.3.3-.7.5-1.1.7-.7.2-1.2.8-1.2 1.5 0 .9.7 1.6 1.6 1.6.7 0 1.3-.5 1.5-1.2.1-.3.4-.4.7-.3.3.1.4.4.3.7zm7.3-.6c0 1.3-1.1 2.4-2.4 2.4-1.1 0-2-.8-2.3-1.8-.1-.3.1-.6.3-.7.3-.1.6.1.7.3.2.7.8 1.2 1.5 1.2.9 0 1.6-.7 1.6-1.6 0-.7-.5-1.3-1.2-1.5-.4-.1-.8-.4-1.1-.7-.8-.8-1.2-1.8-1.2-2.8V4.2c0-.3.2-.5.5-.5s.5.2.5.5v2.1c0 .8.3 1.5.9 2.1.3.3.6.5.9.7 1 .3 1.8 1.2 1.8 2.3z" fill="currentColor"/>
+//       ),
+//       size: "w-14 h-14",
+//       color: "bg-blue-700",
+//       position: { x: -160, y: 0 }
+//     },
+//     {
+//       // Function/Lightning (bottom left)
+//       icon: (
+//         <path d="M13 10V3L4 14h7v7l9-11h-7z" fill="currentColor" />
+//       ),
+//       size: "w-16 h-16",
+//       color: "bg-blue-700",
+//       position: { x: -120, y: 120 }
+//     },
+//     {
+//       // Plus/Medical (bottom right)
+//       icon: (
+//         <path d="M11.7 12.5h1c.2 0 .3-.1.3-.3v-1c0-.2-.1-.3-.3-.3h-1c-.2 0-.3.1-.3.3v1c0 .2.1.3.3.3M17.1 9H16V7.7c0-.8-.6-1.4-1.4-1.4h-1.1V5.1c0-.8-.6-1.4-1.4-1.4h-1.1c-.8 0-1.4.6-1.4 1.4v1.1H8.5c-.8 0-1.4.6-1.4 1.4V9H6c-.8 0-1.4.6-1.4 1.4v1.1c0 .8.6 1.4 1.4 1.4h1.1v1.1c0 .8.6 1.4 1.4 1.4h1.1v1.1c0 .8.6 1.4 1.4 1.4h1.1c.8 0 1.4-.6 1.4-1.4v-1.1h1.1c.8 0 1.4-.6 1.4-1.4v-1.1h1.1c.8 0 1.4-.6 1.4-1.4V10c0-.6-.6-1-1.4-1" fill="currentColor"/>
+//       ),
+//       size: "w-16 h-16",
+//       color: "bg-blue-700",
+//       position: { x: 120, y: 120 }
+//     },
+//     {
+//       // X (center)
+//       icon: (
+//         <path d="M12 3c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm3.9 11.5l-.5.5-3.4-3.4-3.4 3.4-.5-.5 3.4-3.4-3.4-3.4.5-.5 3.4 3.4 3.4-3.4.5.5-3.4 3.4 3.4 3.4z" fill="currentColor"/>
+//       ),
+//       size: "w-28 h-28", 
+//       color: "bg-white",
+//       position: { x: 0, y: 0 }
+//     },
+//     {
+//       // Paint splatter (right)
+//       icon: (
+//         <path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.186.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.186.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.186.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.185-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.185-.186h-2.12a.186.186 0 00-.185.185v1.888c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-.709-.614-1.324-1.01-1.803a6.52 6.52 0 00-1.654-1.346c.365-.636.63-1.353.73-2.178.133-1.107-.019-2.154-.571-2.654-.325-.293-.752-.439-1.27-.439-.937 0-1.919.539-2.575 1.228-.829-.187-1.99-.349-3.013-.349-.1 0-.2.008-.3.01-.789-.898-2.079-1.243-3.307-1.243-.144 0-.282.006-.418.018-1.412.116-2.585.831-3.038 1.659a3.58 3.58 0 00-.435 1.872c.013.362.065.729.167 1.101-.639.088-1.304.253-1.902.521C1.9 6.376 1.325 7.261.97 8.319a4.417 4.417 0 00.144 3.313c.477.962 1.317 1.669 2.368 1.985.162.049.332.087.503.124.386 1.436 1.107 2.73 2.105 3.642.833.758 1.807 1.195 2.841 1.195.168 0 .334-.011.498-.032a4.025 4.025 0 001.28-.425c.781 1.947 1.711 3.325 2.279 3.325.112 0 .201-.038.271-.107.132-.135.177-.366.127-.63-.148-.772-1.031-2.012-1.825-3.319.274-.044.54-.103.796-.176 1.246-.36 2.264-1.08 2.94-2.079a5.03 5.03 0 00.899-3.339c1.904.104 3.553.871 4.084 1.71.263.417.276.817.041 1.195-.591.954-2.517 1.282-4.316 1.217-.215-.008-.429.137-.437.351-.008.215.137.429.351.437.123.005.247.007.371.007 1.535 0 2.844-.252 3.605-.975.503-.478.67-1.112.495-1.883-.268-1.167-1.638-2.193-3.987-2.573.011-.128.017-.255.017-.382 0-1.215-.385-2.433-1.146-3.631.909-.402 1.573-.935 1.904-1.609.507-1.033.184-2.096-.681-2.745" fill="currentColor"/>
+//       ),
+//       size: "w-14 h-14",
+//       color: "bg-blue-100",
+//       position: { x: 180, y: 0 }
+//     },
+//   ]
+
+//   return (
+//     <section className="relative py-20 overflow-hidden min-h-[600px] bg-[#020619]">
+//       <motion.div
+//         initial={{ opacity: 0, y: 20 }}
+//         animate={{ opacity: 1, y: 0 }}
+//         transition={{ duration: 0.8 }}
+//         className="container mx-auto px-4 text-center"
+//       >
+//         <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-32 text-white">
+//           We tackle data challenges
+//           <br />
+//           across the full stack
+//         </h2>
+
+//         <div className="relative h-[400px]">
+//           {/* Center Glow Effect */}
+//           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[180px] rounded-[100px] bg-blue-500/20 blur-2xl" />
+
+//           {/* Circular Guide Lines (faint) */}
+//           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+//             {[1, 2, 3].map((i) => (
+//               <div
+//                 key={i}
+//                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-blue-500/10"
+//                 style={{
+//                   width: `${i * 200}px`,
+//                   height: `${i * 200}px`,
+//                 }}
+//               />
+//             ))}
+//           </div>
+
+//           {/* Small dots in background */}
+//           {Array.from({ length: 30 }).map((_, i) => (
+//             <div 
+//               key={i}
+//               className="absolute w-px h-px bg-blue-300/30"
+//               style={{
+//                 left: `${Math.random() * 100}%`,
+//                 top: `${Math.random() * 100}%`,
+//               }}
+//             />
+//           ))}
+
+//           {/* Tech Stack Icons */}
+//           <div className="relative w-full max-w-6xl mx-auto">
+//             {techItems.map((item, index) => {
+//               return (
+//                 <motion.div
+//                   key={index}
+//                   className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+//                   initial={{ opacity: 0 }}
+//                   animate={{
+//                     opacity: isVisible ? 1 : 0,
+//                     x: item.position.x,
+//                     y: item.position.y,
+//                   }}
+//                   transition={{
+//                     duration: 0.8,
+//                     delay: index * 0.1,
+//                     y: {
+//                       duration: index === 5 ? 0 : 4, // No animation for the center X icon
+//                       repeat: Infinity,
+//                       repeatType: "reverse",
+//                       ease: "easeInOut",
+//                       // Offset ensures items move in different phases
+//                       offset: index * 0.1,
+//                     }
+//                   }}
+//                 >
+//                   <div
+//                     className={`${item.size} ${item.color} rounded-full flex items-center justify-center relative group transition-all duration-300`}
+//                     style={{
+//                       boxShadow: "0 0 20px rgba(37, 99, 235, 0.4)",
+//                     }}
+//                   >
+//                     <svg viewBox="0 0 24 24" className={`text-${index === 5 ? 'blue-900' : 'white'} relative z-10 w-3/5 h-3/5`}>
+//                       {item.icon}
+//                     </svg>
+//                   </div>
+//                 </motion.div>
+//               )
+//             })}
+//           </div>
+//         </div>
+//       </motion.div>
+//     </section>
+//   )
+// }
+
+// export default TechStack
+"use client"
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 
@@ -10,127 +330,99 @@ const TechStack = () => {
     setIsVisible(true)
   }, [])
 
-  // Calculate positions on an arc
-  const calculateArcPosition = (index: number, total: number, radius: number) => {
-    const angleStep = Math.PI / (total - 1) // Semi-circle
-    const angle = index * angleStep
-    return {
-      x: Math.cos(angle) * radius,
-      y: Math.sin(angle) * radius * 0.3, // Flatten the arc vertically
-    }
-  }
-
-  // Tech stack items
   const techItems = [
     {
-      icon: <rect width="16" height="16" x="4" y="4" fill="currentColor" />,
-      size: "w-12 h-12",
+      // Docker?
+      icon: (
+        <path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.186.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.186.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.186.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.185-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.185-.186h-2.12a.186.186 0 00-.185.185v1.888c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-.709-.614-1.324-1.01-1.803a6.52 6.52 0 00-1.654-1.346c.365-.636.63-1.353.73-2.178.133-1.107-.019-2.154-.571-2.654-.325-.293-.752-.439-1.27-.439-.937 0-1.919.539-2.575 1.228-.829-.187-1.99-.349-3.013-.349-.1 0-.2.008-.3.01-.789-.898-2.079-1.243-3.307-1.243-.144 0-.282.006-.418.018-1.412.116-2.585.831-3.038 1.659a3.58 3.58 0 00-.435 1.872c.013.362.065.729.167 1.101-.639.088-1.304.253-1.902.521C1.9 6.376 1.325 7.261.97 8.319a4.417 4.417 0 00.144 3.313c.477.962 1.317 1.669 2.368 1.985.162.049.332.087.503.124.386 1.436 1.107 2.73 2.105 3.642.833.758 1.807 1.195 2.841 1.195.168 0 .334-.011.498-.032a4.025 4.025 0 001.28-.425c.781 1.947 1.711 3.325 2.279 3.325.112 0 .201-.038.271-.107.132-.135.177-.366.127-.63-.148-.772-1.031-2.012-1.825-3.319.274-.044.54-.103.796-.176 1.246-.36 2.264-1.08 2.94-2.079a5.03 5.03 0 00.899-3.339c1.904.104 3.553.871 4.084 1.71.263.417.276.817.041 1.195-.591.954-2.517 1.282-4.316 1.217-.215-.008-.429.137-.437.351-.008.215.137.429.351.437.123.005.247.007.371.007 1.535 0 2.844-.252 3.605-.975.503-.478.67-1.112.495-1.883-.268-1.167-1.638-2.193-3.987-2.573.011-.128.017-.255.017-.382 0-1.215-.385-2.433-1.146-3.631.909-.402 1.573-.935 1.904-1.609.507-1.033.184-2.096-.681-2.745" fill="currentColor"/>
+      ),
+      size: "w-16 h-16",
       color: "bg-blue-900/80",
     },
     {
-      icon: <circle cx="12" cy="12" r="6" fill="currentColor" />,
-      size: "w-14 h-14",
+      // Postgres? (placeholder)
+      icon: (
+        <path d="M11.7 12.5h1c.2 0 .3-.1.3-.3v-1c0-.2-.1-.3-.3-.3h-1c-.2 0-.3.1-.3.3v1c0 .2.1.3.3.3M17.1 9H16V7.7c0-.8-.6-1.4-1.4-1.4h-1.1V5.1c0-.8-.6-1.4-1.4-1.4h-1.1c-.8 0-1.4.6-1.4 1.4v1.1H8.5c-.8 0-1.4.6-1.4 1.4V9H6c-.8 0-1.4.6-1.4 1.4v1.1c0 .8.6 1.4 1.4 1.4h1.1v1.1c0 .8.6 1.4 1.4 1.4h1.1v1.1c0 .8.6 1.4 1.4 1.4h1.1c.8 0 1.4-.6 1.4-1.4v-1.1h1.1c.8 0 1.4-.6 1.4-1.4v-1.1h1.1c.8 0 1.4-.6 1.4-1.4V10c0-.6-.6-1-1.4-1" fill="currentColor"/>
+      ),
+      size: "w-16 h-16",
       color: "bg-blue-800",
     },
     {
-      icon: <path d="M13 10V3L4 14h7v7l9-11h-7z" fill="currentColor" />,
+      // Lightning
+      icon: (
+        <path d="M13 10V3L4 14h7v7l9-11h-7z" fill="currentColor" />
+      ),
       size: "w-16 h-16",
       color: "bg-blue-700",
     },
     {
-      icon: <circle cx="12" cy="12" r="8" fill="currentColor" />,
+      // Python (moved to 4th position for the center)
+      icon: (
+        <path d="M10.2 12.2C9.9 13.2 9 14 7.9 14c-1.3 0-2.4-1.1-2.4-2.4 0-1.1.8-2 1.8-2.3C7.5 8.9 7.9 8.7 8.2 8.4c.6-.6.9-1.3.9-2.1V4.2c0-.3.2-.5.5-.5s.5.2.5.5v2.1c0 1.1-.4 2.1-1.2 2.8-.3.3-.7.5-1.1.7-.7.2-1.2.8-1.2 1.5 0 .9.7 1.6 1.6 1.6.7 0 1.3-.5 1.5-1.2.1-.3.4-.4.7-.3.3.1.4.4.3.7zm7.3-.6c0 1.3-1.1 2.4-2.4 2.4-1.1 0-2-.8-2.3-1.8-.1-.3.1-.6.3-.7.3-.1.6.1.7.3.2.7.8 1.2 1.5 1.2.9 0 1.6-.7 1.6-1.6 0-.7-.5-1.3-1.2-1.5-.4-.1-.8-.4-1.1-.7-.8-.8-1.2-1.8-1.2-2.8V4.2c0-.3.2-.5.5-.5s.5.2.5.5v2.1c0 .8.3 1.5.9 2.1.3.3.6.5.9.7 1 .3 1.8 1.2 1.8 2.3z" fill="currentColor"/>
+      ),
+      // Make Python bigger
       size: "w-20 h-20",
+      color: "bg-blue-700",
+    },
+    {
+      // Possibly OpenAI (placeholder swirl)
+      icon: (
+        <path d="M12 3c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm3.9 11.5l-.5.5-3.4-3.4-3.4 3.4-.5-.5 3.4-3.4-3.4-3.4.5-.5 3.4 3.4 3.4-3.4.5.5-3.4 3.4 3.4 3.4z" fill="currentColor"/>
+      ),
+      size: "w-16 h-16",
       color: "bg-blue-600",
     },
     {
-      icon: <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" fill="currentColor" />,
-      size: "w-16 h-16",
-      color: "bg-blue-700",
-    },
-    {
-      icon: <path d="M12 2L8 12l4 10 4-10z" fill="currentColor" />,
+      // Azure? (placeholder)
+      icon: (
+        <path d="M12 2L8 12l4 10 4-10z" fill="currentColor" />
+      ),
       size: "w-14 h-14",
       color: "bg-blue-800",
     },
     {
-      icon: <rect width="16" height="16" x="4" y="4" fill="currentColor" />,
+      // Node? (placeholder)
+      icon: (
+        <path d="M11.5 2.9c-4.1 0-7.5 3.4-7.5 7.5v.1c-1.4.3-2.5 1.6-2.5 3.1 0 1.7 1.3 3 3 3h.5c.4 0 .7-.3.7-.7s-.3-.7-.7-.7h-.5c-.9 0-1.6-.7-1.6-1.6 0-1 .8-1.8 1.8-1.6.3 0 .5-.1.6-.4.1-.2.1-.5 0-.7-.1-.2-.1-.3-.1-.5 0-3.4 2.8-6.2 6.2-6.2 2.8 0 5.3 1.9 6 4.7.1.3.4.5.7.5.9-.1 1.7.6 1.7 1.5 0 .8-.7 1.5-1.5 1.5h-.5c-.4 0-.7.3-.7.7s.3.7.7.7h.5c1.7 0 3-1.3 3-3 0-1.5-1.1-2.8-2.5-3.1v-.1c0-4.2-3.4-7.5-7.5-7.5zm-.9 8.2c-.3-.3-.7-.3-.9 0l-2.2 2.2c-.3.3-.3.7 0 .9.3.3.7.3.9 0l1.1-1.1v5.1c0 .4.3.7.7.7s.7-.3.7-.7v-5.1l1.1 1.1c.3.3.7.3.9 0 .3-.3.3-.7 0-.9l-2.2-2.2z" fill="currentColor"/>
+      ),
       size: "w-12 h-12",
       color: "bg-blue-900/80",
     },
   ]
 
   return (
-    <section className="relative py-20 overflow-hidden min-h-[600px]">
+    <section className="relative py-20 bg-[#0b0f19] text-white">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         className="container mx-auto px-4 text-center"
       >
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-32">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-16">
           We tackle data challenges
           <br />
           across the full stack
         </h2>
 
-        <div className="relative h-[400px]">
-          {/* Ripple Effects */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-blue-500/10"
-                style={{
-                  width: `${i * 200}px`,
-                  height: `${i * 200}px`,
-                  animation: `ripple 4s linear ${i * 0.5}s infinite`,
-                }}
-              />
-            ))}
-          </div>
-
-          {/* Tech Stack Icons */}
-          <div className="relative w-full max-w-5xl mx-auto">
-            {techItems.map((item, index) => {
-              const position = calculateArcPosition(index, techItems.length, 300)
-              return (
-                <motion.div
-                  key={index}
-                  className="absolute left-1/2 top-1/2"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{
-                    opacity: isVisible ? 1 : 0,
-                    x: position.x,
-                    y: position.y,
-                  }}
-                  transition={{
-                    duration: 0.8,
-                    delay: index * 0.1,
-                    y: {
-                      duration: 3,
-                      repeat: Number.POSITIVE_INFINITY,
-                      repeatType: "reverse",
-                      ease: "easeInOut",
-                      offset: index * 0.1,
-                    },
-                  }}
-                >
-                  <div
-                    className={`${item.size} ${item.color} rounded-full flex items-center justify-center relative group transition-all duration-300`}
-                    style={{
-                      boxShadow: "0 0 20px rgba(37, 99, 235, 0.2)",
-                      transform: "translate(-50%, -50%)",
-                    }}
-                  >
-                    <div className="absolute inset-0 rounded-full bg-blue-500/20 group-hover:bg-blue-500/30 transition-all duration-300" />
-                    <svg viewBox="0 0 24 24" className="text-white relative z-10 w-1/2 h-1/2">
-                      {item.icon}
-                    </svg>
-                  </div>
-                </motion.div>
-              )
-            })}
-          </div>
+        {/* Icons in a single horizontal row */}
+        <div className="flex items-center justify-center gap-8">
+          {techItems.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              className={`relative group transition-all duration-300 ${item.size} ${item.color} rounded-full flex items-center justify-center`}
+              style={{
+                boxShadow: "0 0 20px rgba(37, 99, 235, 0.2)",
+              }}
+            >
+              <div className="absolute inset-0 rounded-full bg-blue-500/20 group-hover:bg-blue-500/30 transition-all duration-300" />
+              <svg viewBox="0 0 24 24" className="text-white relative z-10 w-3/5 h-3/5">
+                {item.icon}
+              </svg>
+            </motion.div>
+          ))}
         </div>
       </motion.div>
     </section>
@@ -138,4 +430,3 @@ const TechStack = () => {
 }
 
 export default TechStack
-
