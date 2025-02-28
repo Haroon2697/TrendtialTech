@@ -201,7 +201,7 @@ export default function InsightFilter() {
 
         {/* Filter Buttons */}
         <motion.div
-          className="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-3 mb-8 sm:mb-12 md:mb-16 max-w-screen-xl mx-auto"
+          className="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-3 mb-8 sm:mb-16 md:mb-8 max-w-screen-xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -335,7 +335,7 @@ export default function InsightFilter() {
         </div>
 
         {/* Contact Section */}
-        <div className="relative my-20 sm:my-32 md:my-44">
+        <div className="relative my-20 sm:my-32 md:my-36">
           <div className="relative max-w-4xl mx-auto bg-[#04070d] backdrop-blur-sm rounded-[24px] sm:rounded-[32px] overflow-hidden border border-[#234189]">
             {/* Inner Glow Effects */}
             <div className="absolute top-[-40%] right-[-50px] transform -translate-x-1/2">
