@@ -31,7 +31,7 @@ export default function AboutHero() {
   }, []);
 
   return (
-    <div className="h-[80vh] w-full bg-[#020824] flex items-center justify-center px-4 md:px-8 py-10 overflow-hidden relative">
+    <div className="h-[80vh] w-full bg-[#0a0a13] flex items-center justify-center px-4 md:px-8 py-10 overflow-hidden relative">
       {/* Render Stars */}
       {stars.map((star) => (
         <motion.div
@@ -56,7 +56,7 @@ export default function AboutHero() {
 
       {/* Center Glow Effect */}
       <div className="absolute top-[-20%] left-1/2 transform -translate-x-1/2">
-        <div className="w-[500px] h-[300px] rounded-full bg-gradient-to-b from-[#7199ff] via-[#004cfe] to-transparent opacity-80 blur-[100px]" />
+        <div className="w-[700px] h-[300px] rounded-full bg-gradient-to-b from-[#7199ff] via-[#004cfe] to-transparent opacity-80 blur-[100px]" />
       </div>
 
       <motion.div

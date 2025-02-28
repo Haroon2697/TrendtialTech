@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="w-full pt-16 pb-6 text-white overflow-hidden bg-[#03002c] relative">
+    <footer className="w-full pt-16 pb-6 text-white overflow-hidden bg-[#0a0a13] relative">
       {/* Glow effects */}
       <div className="absolute top-[-15%] left-0 transform -translate-x-1/4 md:w-[800px] md:h-[450px] w-[400px] h-[250px]">
         <div className="w-full h-full rounded-full bg-gradient-to-b from-[#7199ff] via-[#004cfe] to-transparent opacity-90 blur-[100px] md:blur-[120px]" />

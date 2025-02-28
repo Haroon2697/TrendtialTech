@@ -110,7 +110,7 @@ export default function InsightFilter() {
   }, [activeFilter]);
 
   return (
-    <section className="relative bg-[#020824] min-h-screen overflow-hidden">
+    <section className="relative bg-[#0a0a13] min-h-screen overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         {/* Stars */}
@@ -137,7 +137,7 @@ export default function InsightFilter() {
 
         {/* Glow Effect */}
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
-          <div className="w-[500px] h-[300px] rounded-full bg-gradient-to-b from-[#7199ff] via-[#004cfe] to-transparent opacity-80 blur-[100px]" />
+          <div className="w-[700px] h-[300px] rounded-full bg-gradient-to-b from-[#7199ff] via-[#004cfe] to-transparent opacity-80 blur-[100px]" />
         </div>
       </div>
 
@@ -235,7 +235,7 @@ export default function InsightFilter() {
 
         {/* Glow Effect */}
         <div className="absolute top- right-1/2 transform -translate-x-1/2">
-          <div className="w-[500px] h-[300px] rounded-full bg-gradient-to-b from-[#7199ff] via-[#004cfe] to-transparent opacity-80 blur-[100px]" />
+          <div className="w-[400px] h-[300px] rounded-full bg-gradient-to-b from-[#7199ff] via-[#004cfe] to-transparent opacity-80 blur-[100px]" />
         </div>
 
         {/* Contact Section */}
