@@ -12,7 +12,7 @@ import AnimatedBackground from "./components/AnimatedBackground"
 import { useEffect, useState } from "react"
 import BlankCaseStudy from "./pages/case-studies/BlankCaseStudy"
 import TimescaleCaseStudy from "./pages/case-studies/TimescaleCaseStudy"
-
+import Footer from "./components/Footer"
 
 function App() {
   const [isAppMounted, setIsAppMounted] = useState(false)
@@ -25,20 +25,21 @@ function App() {
       <div className="min-h-screen bg-dark-blue text-white relative overflow-hidden">
         <AnimatedBackground />
         <div className="relative z-10">
-        <Navbar />
+          <Navbar />
           <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/insights" element={<Insights />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/academy" element={<Academy />} />
-            <Route path="/genai-launchpad" element={<GenAILaunchpad />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/case-studies/transforming-blanks-customer-service-with-ai" element={<BlankCaseStudy />} />
-            <Route path="/case-studies/partnering-with-timescale" element={<TimescaleCaseStudy />} />
-          </Routes>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/insights" element={<Insights />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/academy" element={<Academy />} />
+              <Route path="/genai-launchpad" element={<GenAILaunchpad />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/case-studies/transforming-blanks-customer-service-with-ai" element={<BlankCaseStudy />} />
+              <Route path="/case-studies/partnering-with-timescale" element={<TimescaleCaseStudy />} />
+            </Routes>
           </main>
+          <Footer />
         </div>
       </div>
     </Router>
