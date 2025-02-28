@@ -47,8 +47,8 @@ export default function AboutTeam() {
   };
 
   return (
-    <section className="bg-[#020824] text-white py-8 md:py-16 relative overflow-hidden">
-
+    <section className="bg-[#0a0a13] text-white py-8 md:py-16 relative overflow-hidden">
+     
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div

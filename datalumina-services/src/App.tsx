@@ -8,7 +8,6 @@ import GenAILaunchpad from "./pages/GenAILaunchpad"
 import Contact from "./pages/Contact"
 import Navbar from "./components/Navbar"
 import AnimatedBackground from "./components/AnimatedBackground"
-
 import { useEffect, useState } from "react"
 import BlankCaseStudy from "./pages/case-studies/BlankCaseStudy"
 import TimescaleCaseStudy from "./pages/case-studies/TimescaleCaseStudy"

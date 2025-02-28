@@ -20,7 +20,7 @@ export default function AboutEmpower() {
   const secondTextInView = useInView(secondTextRef, { once: true, amount: 0.5 });
 
   return (
-    <div className="w-full bg-[#020824] text-white relative overflow-hidden font-[Manrope,sans-serif]">
+    <div className="w-full bg-[#0a0a13] text-white relative overflow-hidden font-[Manrope,sans-serif]">
       {/* Center Glow Effect */}
       <div className="absolute top-[-20%] left-1/2 transform -translate-x-1/2">
         <div className="w-[80vw] max-w-[600px] h-[200px] md:h-[350px] rounded-full bg-gradient-to-b from-[#7199ff] via-[#004cfe] to-transparent opacity-80 blur-[80px] md:blur-[100px]" />

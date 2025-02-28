@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
 
 :root {
   --dark-blue: #03002c;
 }
+
+
 
 @keyframes ripple {
   0% {
@@ -32,8 +35,11 @@ html {
 
 body {
   margin: 0;
+<<<<<<< HEAD
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif; */
+=======
+>>>>>>> Haroon
   font-family: 'Manrope', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -67,4 +73,6 @@ body {
 .glow-hover:hover {
   box-shadow: 0 0 30px rgba(59, 130, 246, 0.7);
 }
+
+
 
