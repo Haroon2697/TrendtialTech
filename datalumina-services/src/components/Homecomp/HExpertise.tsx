@@ -68,7 +68,7 @@ const HExpertise = () => {
     >
       {/* Right Top Glow Effect */}
       <div className="absolute top-[-10%] right-[-10%]">
-        <div className="w-[500px] h-[300px] rounded-full bg-gradient-to-b from-[#7199ff] via-[#004cfe] to-transparent opacity-30 blur-[100px]" />
+        <div className="w-[500px] h-[300px] rounded-full bg-gradient-to-b from-[#7199ff] via-[#004cfe] to-transparent opacity-80 blur-[100px]" />
       </div>
       
       <div className="max-w-7xl mx-auto relative z-10 mb-24">
@@ -80,7 +80,7 @@ const HExpertise = () => {
         </motion.h2>
         
         <motion.p 
-          className="text-gray-400 text-base md:text-s max-w-3xl mb-6" 
+          className="text-gray-400 text-[14px] md:text-s max-w-3xl mb-6" 
           variants={itemVariants}
         >
           At Datalumina, we bring together a decade of AI engineering, software development, and 

@@ -80,7 +80,7 @@ export default function ServicesSection() {
           Services
         </motion.h2>
         <motion.p
-        className="text-xs text-white/80 font-light max-w-4xl mb-16"
+        className="text-[13px] text-white/80 font-light max-w-4xl mb-16"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
