@@ -2,8 +2,8 @@
 
 import type React from "react"
 
-import { motion, AnimatePresence } from "framer-motion"
-import { useState, useEffect } from "react"
+import { motion, AnimatePresence, type Variants, useInView } from "framer-motion"
+import { useState, useEffect, useRef } from "react"
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 
@@ -33,7 +33,7 @@ interface InsightCard {
 const insightCards = [
   {
     id: 1,
-    title: "How to build effective AI agents with LLMs",
+    title: "How to build effective AI agents",
     image: "/Images/p1.jpg",
     date: "Jan 23, 2025",
     category: ["AI & ML"],
@@ -94,7 +94,7 @@ const insightCards = [
   {
     id: 6,
     title: "DeepSeek: The open-source challenger and what it means for business",
-    image: "/Images/p6.jpg",
+      image: "/Images/p6.jpg",
     date: "Jan 29, 2025",
     category: ["Digital Transformation"],
     author: {
@@ -106,6 +106,39 @@ const insightCards = [
 ]
 
 const filterButtons = ["All Insights", "AI & ML", "Data Analytics", "Digital Transformation"]
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+}
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+}
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+}
 
 export default function InsightFilter() {
   const [stars, setStars] = useState<Star[]>([])
@@ -145,6 +178,16 @@ export default function InsightFilter() {
     setMousePositions(newMousePositions)
   }
 
+  const headerRef = useRef(null)
+  const filterRef = useRef(null)
+  const cardsRef = useRef(null)
+  const contactRef = useRef(null)
+
+  const headerInView = useInView(headerRef, { once: true, amount: 0.5 })
+  const filterInView = useInView(filterRef, { once: true, amount: 0.5 })
+  const cardsInView = useInView(cardsRef, { once: true, amount: 0.1 })
+  const contactInView = useInView(contactRef, { once: true, amount: 0.5 })
+
   return (
     <section className="relative bg-[#0a0a13] min-h-screen overflow-hidden">
       {/* Background Effects */}
@@ -180,34 +223,34 @@ export default function InsightFilter() {
       {/* Main Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
         {/* Header Section */}
-        <div className="text-center max-w-3xl my-24 mx-auto mb-12 sm:mb-16">
-          <motion.h1
-            className="text-4xl sm:text-3xl lg:text-6xl font-light text-white mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+        <motion.div
+          ref={headerRef}
+          className="text-center max-w-3xl my-24 mx-auto mb-12 sm:mb-16"
+          variants={containerVariants}
+          initial="hidden"
+          animate={headerInView ? "visible" : "hidden"}
+        >
+          <motion.h1 className="text-4xl sm:text-3xl lg:text-6xl font-light text-white mb-6" variants={itemVariants}>
             Insights
           </motion.h1>
           <motion.p
             className="text-gray-300 mb-36 text-xs sm:text-base leading-relaxed font-light"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            variants={itemVariants}
           >
             Discover insights and expert perspectives on data, AI, and the future of intelligent systems.
           </motion.p>
-        </div>
+        </motion.div>
 
         {/* Filter Buttons */}
         <motion.div
+          ref={filterRef}
           className="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-3 mb-8 sm:mb-16 md:mb-8 max-w-screen-xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          variants={containerVariants}
+          initial="hidden"
+          animate={filterInView ? "visible" : "hidden"}
         >
-          {filterButtons.map((filter) => (
-            <button
+          {filterButtons.map((filter, index) => (
+            <motion.button
               key={filter}
               onClick={() => setActiveFilter(filter)}
               className={`px-3 sm:px-4 md:px-6 py-2 rounded-full text-xs sm:text-sm transition-all duration-300
@@ -216,118 +259,126 @@ export default function InsightFilter() {
                     ? "bg-blue-600/50 text-white border-blue-400 shadow-lg shadow-blue-500/20"
                     : "bg-blue-900/30 text-blue-200 hover:bg-blue-800/40 hover:shadow-md"
                 } backdrop-blur-sm border border-blue-700/30`}
+              variants={itemVariants}
+              custom={index}
+              transition={{ delay: index * 0.1 }}
             >
               {filter}
-            </button>
+            </motion.button>
           ))}
         </motion.div>
 
-        {/* Cards Grid */ }
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-2 mb-12 sm:mb-20">
-      <AnimatePresence mode="wait">
-        {filteredCards.map((card, index) => (
-          <motion.article
-            key={card.id}
-            layout
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-            className="bg-[#0a0a13] rounded-[20px] overflow-hidden group relative border border-[#2a3a5f] h-[420px] shadow-lg"
-            onMouseMove={handleMouseMove(index)}
-          >
-            {/* Custom cursor glow effect */}
-            <motion.div
-              className="w-32 h-32 rounded-full bg-gradient-to-b from-[#7199ff] via-[#004cfe] to-transparent opacity-70 blur-[60px] absolute pointer-events-none hidden group-hover:block z-10"
-              style={{
-                left: mousePositions[index].x - 64,
-                top: mousePositions[index].y - 64,
-              }}
-              transition={{ type: "spring", damping: 25, stiffness: 50 }}
-            />
-            {/* Dynamic border effect */}
-            <motion.div
-              className="absolute inset-0 rounded-[20px] pointer-events-none z-0"
-              style={{
-                background: `radial-gradient(
+        {/* Cards Grid */}
+        <motion.div
+          ref={cardsRef}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-2 mb-12 sm:mb-20"
+          variants={containerVariants}
+          initial="hidden"
+          animate={cardsInView ? "visible" : "hidden"}
+        >
+          <AnimatePresence mode="wait">
+            {filteredCards.map((card, index) => (
+              <motion.article
+                key={card.id}
+                layout
+                variants={cardVariants}
+                initial="hidden"
+                animate="visible"
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-[#0a0a13] rounded-[20px] overflow-hidden group relative border border-[#2a3a5f] h-[420px] shadow-lg"
+                onMouseMove={handleMouseMove(index)}
+              >
+                {/* Custom cursor glow effect */}
+                <motion.div
+                  className="w-32 h-32 rounded-full bg-gradient-to-b from-[#7199ff] via-[#004cfe] to-transparent opacity-70 blur-[60px] absolute pointer-events-none hidden group-hover:block z-10"
+                  style={{
+                    left: mousePositions[index].x - 64,
+                    top: mousePositions[index].y - 64,
+                  }}
+                  transition={{ type: "spring", damping: 25, stiffness: 50 }}
+                />
+                {/* Dynamic border effect */}
+                <motion.div
+                  className="absolute inset-0 rounded-[20px] pointer-events-none z-0"
+                  style={{
+                    background: `radial-gradient(
               800px circle at ${mousePositions[index].x}px ${mousePositions[index].y}px,
               rgba(113, 153, 255, 0) 0%,
               rgba(113, 153, 255, 0.1) 70%,
               rgba(113, 153, 255, 0.3) 100%
             )`,
-                border: "1px solid rgba(113, 153, 255, 0.2)",
-                boxShadow: `0 0 20px 2px rgba(113, 153, 255, 0.1)`,
-              }}
-            />
+                    border: "1px solid rgba(113, 153, 255, 0.2)",
+                    boxShadow: `0 0 20px 2px rgba(113, 153, 255, 0.1)`,
+                  }}
+                />
 
-            {/* Center Glow Effect */}
-            <div className="absolute bottom-[-20%] -right-1/4 transform -translate-x-1/4">
-              <div className="w-[200px] h-[150px] rounded-full bg-gradient-to-b from-[#7199ff] via-[#004cfe] to-transparent opacity-100 blur-[120px]" />
-            </div>
-
-            <div className="relative w-full h-56">
-              <Image
-                src={card.image || "/placeholder.svg"}
-                alt={card.title}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                priority={card.id <= 3}
-                className="object-cover transition-transform duration-500 hover:scale-[1.02]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a13] to-transparent opacity-70" />
-              <div className="absolute bottom-0 left-0 w-full p-4">
-                
-              </div>
-            </div>
-
-            <div className="p-4 flex flex-col justify-between h-[calc(80%-14rem)]">
-              <div>
-                <div className="flex justify-between items-center mb-2">
-                  <div className="flex flex-wrap gap-1.5">
-                    {card.category.map((cat, idx) => (
-                      <span
-                        key={idx}
-                        className="inline-block px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-900/30 text-blue-400 backdrop-blur-sm"
-                      >
-                        {cat}
-                      </span>
-                    ))}
-                  </div>
-                  <span className="text-xs text-gray-400">{card.date}</span>
+                {/* Center Glow Effect */}
+                <div className="absolute bottom-[-20%] -right-1/4 transform -translate-x-1/4">
+                  <div className="w-[200px] h-[150px] rounded-full bg-gradient-to-b from-[#7199ff] via-[#004cfe] to-transparent opacity-100 blur-[120px]" />
                 </div>
-                <h3 className="text-xl font-light text-white mb-2 leading-tight">{card.title}</h3>
-              </div>
 
-              <div className="mt-12 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <div className="relative w-8 h-8 rounded-full overflow-hidden">
-                    <Image
-                      src={card.author.avatar || "/placeholder.svg"}
-                      alt={card.author.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
+                <div className="relative w-full h-56">
+                  <Image
+                    src={card.image || "/placeholder.svg"}
+                    alt={card.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={card.id <= 3}
+                    className="object-cover transition-transform duration-500 hover:scale-[1.02]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a13] to-transparent opacity-70" />
+                  <div className="absolute bottom-0 left-0 w-full p-4"></div>
+                </div>
+
+                <div className="p-4 flex flex-col justify-between h-[calc(80%-14rem)]">
                   <div>
-                    <p className="font-light text-xs text-white">{card.author.name}</p>
-                    <p className="text-xs text-gray-400">{card.author.title}</p>
+                    <div className="flex justify-between items-center mb-2">
+                      <div className="flex flex-wrap gap-1.5">
+                        {card.category.map((cat, idx) => (
+                          <span
+                            key={idx}
+                            className="inline-block px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-900/30 text-blue-400 backdrop-blur-sm"
+                          >
+                            {cat}
+                          </span>
+                        ))}
+                      </div>
+                      <span className="text-xs text-gray-400">{card.date}</span>
+                    </div>
+                    <h3 className="text-xl font-light text-white mb-2 leading-tight">{card.title}</h3>
+                  </div>
+
+                  <div className="mt-12 flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="relative w-8 h-8 rounded-full overflow-hidden">
+                        <Image
+                          src={card.author.avatar || "/placeholder.svg"}
+                          alt={card.author.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div>
+                        <p className="font-light text-xs text-white">{card.author.name}</p>
+                        <p className="text-xs text-gray-400">{card.author.title}</p>
+                      </div>
+                    </div>
+
+                    <motion.button
+                      className="inline-flex items-center gap-1 text-xs font-light text-white hover:text-blue-400 transition-colors duration-300 group"
+                      aria-label={`Read more about ${card.title}`}
+                      whileHover={{ x: 3 }}
+                    >
+                      READ ARTICLE
+                      <ArrowRight className="h-3.5 w-3.5 transform transition-transform duration-300 group-hover:translate-x-1" />
+                    </motion.button>
                   </div>
                 </div>
-
-                <motion.button
-                  className="inline-flex items-center gap-1 text-xs font-light text-white hover:text-blue-400 transition-colors duration-300 group"
-                  aria-label={`Read more about ${card.title}`}
-                  whileHover={{ x: 3 }}
-                >
-                  READ ARTICLE
-                  <ArrowRight className="h-3.5 w-3.5 transform transition-transform duration-300 group-hover:translate-x-1" />
-                </motion.button>
-              </div>
-            </div>
-          </motion.article>
-        ))}
-      </AnimatePresence>
-    </div>
+              </motion.article>
+            ))}
+          </AnimatePresence>
+        </motion.div>
 
         {/* Glow Effect */}
         <div className="absolute bottom-[8%] right-1/2 transform -translate-x-1/2">
@@ -335,8 +386,17 @@ export default function InsightFilter() {
         </div>
 
         {/* Contact Section */}
-        <div className="relative my-20 sm:my-32 md:my-36">
-          <div className="relative max-w-4xl mx-auto bg-[#04070d] backdrop-blur-sm rounded-[24px] sm:rounded-[32px] overflow-hidden border border-[#234189]">
+        <motion.div
+          ref={contactRef}
+          className="relative my-20 sm:my-32 md:my-36"
+          variants={containerVariants}
+          initial="hidden"
+          animate={contactInView ? "visible" : "hidden"}
+        >
+          <motion.div
+            className="relative max-w-4xl mx-auto bg-[#04070d] backdrop-blur-sm rounded-[24px] sm:rounded-[32px] overflow-hidden border border-[#234189]"
+            variants={itemVariants}
+          >
             {/* Inner Glow Effects */}
             <div className="absolute top-[-40%] right-[-50px] transform -translate-x-1/2">
               <div className="w-[300px] sm:w-[400px] h-[150px] sm:h-[200px] rounded-full bg-gradient-to-b from-[#7199ff] via-[#0d55ff] to-transparent opacity-100 blur-[90px]" />
@@ -372,8 +432,8 @@ export default function InsightFilter() {
                 Contact us <ArrowRight className="w-4 h-4" />
               </motion.button>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )
