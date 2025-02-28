@@ -10,6 +10,8 @@ import Navbar from "./components/Navbar"
 import AnimatedBackground from "./components/AnimatedBackground"
 
 import { useEffect, useState } from "react"
+import BlankCaseStudy from "./pages/case-studies/BlankCaseStudy"
+import TimescaleCaseStudy from "./pages/case-studies/TimescaleCaseStudy"
 
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
             <Route path="/academy" element={<Academy />} />
             <Route path="/genai-launchpad" element={<GenAILaunchpad />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/case-studies/transforming-blanks-customer-service-with-ai" element={<BlankCaseStudy />} />
+            <Route path="/case-studies/partnering-with-timescale" element={<TimescaleCaseStudy />} />
           </Routes>
           </main>
         </div>
