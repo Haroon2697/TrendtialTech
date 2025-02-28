@@ -14,10 +14,9 @@ const ClientsLogos: React.FC = () => {
     return (
         <section id="client-logos" className="flex w-full max-sm:hidden">
             <div className="relative flex h-[90px] w-full items-center overflow-hidden bg-black lg:h-[150px]">
-                {/* Gradient Fade Effects */}
-                <div className="absolute left-0 top-0 z-10 h-full w-[25%] bg-gradient-to-r from-black from-[5%] pointer-events-none"></div>
-                <div className="absolute right-0 top-0 h-full w-[25%] bg-gradient-to-l from-black from-[5%] pointer-events-none"></div>
-
+              {/* Gradient Fade Effects */}
+<div className="absolute left-0 top-0 z-10 h-full w-[25%] bg-gradient-to-r from-black from-[25%] pointer-events-none"></div>
+<div className="absolute right-0 top-0 z-10 h-full w-[25%] bg-gradient-to-l from-black from-[25%] pointer-events-none"></div>
                 {/* Scrolling Logos */}
                 <motion.div
                     className="flex min-w-max gap-8"

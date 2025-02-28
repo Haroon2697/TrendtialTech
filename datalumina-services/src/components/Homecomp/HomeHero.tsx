@@ -16,21 +16,21 @@ const HeroSection: React.FC = () => {
       >
         {/* Top Right Glow */}
         <motion.div
-          className="absolute top-[-5%] right-[-10%] w-[600px] h-[400px] rounded-full bg-gradient-to-b from-[#7199ff] via-[#004cfe] to-transparent opacity-90 blur-[100px]"
+          className="absolute top-[-5%] right-[-10%] w-[300px] sm:w-[600px] h-[200px] sm:h-[400px] rounded-full bg-gradient-to-b from-[#7199ff] via-[#004cfe] to-transparent opacity-90 blur-[50px] sm:blur-[100px]"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.5 }}
         />
         {/* Middle Right Glow */}
         <motion.div
-          className="absolute top-[40%] left-1/2 w-[700px] h-[400px] rounded-full bg-gradient-to-b from-[#7199ff] via-[#004cfe] to-transparent opacity-80 blur-[120px]"
+          className="absolute top-[40%] left-1/2 w-[350px] sm:w-[700px] h-[200px] sm:h-[400px] rounded-full bg-gradient-to-b from-[#7199ff] via-[#004cfe] to-transparent opacity-80 blur-[60px] sm:blur-[120px]"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.8 }}
         />
         {/* Bottom Left Glow */}
         <motion.div
-          className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[400px] rounded-full bg-gradient-to-b from-[#7199ff] via-[#004cfe] to-transparent opacity-90 blur-[100px]"
+          className="absolute bottom-[-10%] left-[-10%] w-[300px] sm:w-[600px] h-[200px] sm:h-[400px] rounded-full bg-gradient-to-b from-[#7199ff] via-[#004cfe] to-transparent opacity-90 blur-[50px] sm:blur-[100px]"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.5 }}
@@ -42,12 +42,18 @@ const HeroSection: React.FC = () => {
         {/* GenAI Launchpad Button */}
         <motion.a
           href="#"
-          className="inline-flex items-center gap-2 bg-gradient-to-r from-[#15153d] via-[#00123d] to-[#0a0a13] border border-[#144180] text-white text-sm px-4 py-2 rounded-full mb-8 shadow-[0_0_24px_#004cfe] hover:shadow-[0_0_20px_#004cfe] transition-shadow duration-300"
+          className="inline-flex items-center gap-2 bg-gradient-to-r from-[#15153d] via-[#00123d] to-[#0a0a13] border border-[#144180] hover:bg-gradient-to-r hover:from-[#36369a] hover:via-[#002478] hover:to-[#0a0a13] text-white text-sm px-4 py-2 rounded-full mb-8 shadow-[0_0_24px_#004cfe] hover:shadow-[0_0_20px_#004cfe] transition-shadow duration-300"
           whileTap={{ scale: 0.95 }}
-          whileHover={{ scale: 1.05 }}
         >
-          Tech Consultancy
-          <ArrowRight className="w-4 h-4" />
+          Trendtial Tech Consultancy
+          <motion.span
+            className="flex"
+            initial={{ rotate: 0, x: -2, y: -2 }}
+            whileHover={{ x: 0, y: -2 }}
+            transition={{ duration: 0.2 }}
+          >
+            <ArrowRight className="w-4 h-4" />
+          </motion.span>
         </motion.a>
 
         {/* Main Heading */}
@@ -118,7 +124,6 @@ const HeroSection: React.FC = () => {
           }}
         />
       ))}
-      
     </section>
   )
 }

@@ -66,17 +66,10 @@ const HomeGIT = () => {
       {/* Button positioned below the content */}
       <motion.button
         whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.85)", scale: 1.02 }}
-        className="bg-white text-[#03002c] px-5 py-2 rounded-full flex items-center gap-2 text-sm font-light transition-all duration-300 z-10"
+        className="bg-white text-[#03002c] px-5 py-2 rounded-full flex items-center gap-2 text-sm font-light transition-all duration-300 z-10 group"
       >
         Get in touch
-        <motion.span
-          className="flex"
-          initial={{ rotate: -45, x: -2, y: -2 }}
-          whileHover={{ x: 0, y: -2 }}
-          transition={{ duration: 0.2 }}
-        >
-          <ArrowRight className="w-4 h-4" />
-        </motion.span>
+        <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
       </motion.button>
     </div>
   );
