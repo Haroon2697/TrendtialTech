@@ -2,6 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { useState } from "react"
+
 const services = [
   {
     id: "01",
@@ -28,6 +29,7 @@ const services = [
       "Comprehensive training programs designed to upskill your team with the latest AI technologies and methodologies.",
   },
 ]
+
 const variants = {
   enter: (direction: number) => ({
     x: direction > 0 ? 1000 : -1000,
@@ -44,23 +46,33 @@ const variants = {
     opacity: 0,
   }),
 }
+
 export default function ServicesSection() {
   const [[page, direction], setPage] = useState([0, 0])
+
   const paginate = (newDirection: number) => {
     const newPage = page + newDirection
     if (newPage >= 0 && newPage < services.length) {
       setPage([newPage, newDirection])
     }
   }
+
   const handleDotClick = (index: number) => {
     const direction = index > page ? 1 : -1
     setPage([index, direction])
   }
+
   return (
     <section className="relative w-full bg-black py-20 overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-8">
+      {/* Top left component glow */}
+      <div className="absolute top-0 left-0 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-[#7199ff] via-[#004cfe] to-transparent opacity-80 blur-[120px] -translate-x-1/2 -translate-y-1/2" />
+
+      <div className="absolute top-0 left-1/2 w-[600px] h-[200px] rounded-full bg-gradient-to-br from-[#7199ff] via-[#004cfe] to-transparent opacity-80 blur-[120px] -translate-x-1/2 -translate-y-1/2" />
+
+
+      <div className="container mx-auto font-extralight px-6 lg:px-8 relative">
         <motion.h2
-          className="text-5xl font-bold text-white mb-6"
+          className="text-5xl font-extralight text-white mb-6"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -68,7 +80,7 @@ export default function ServicesSection() {
           Services
         </motion.h2>
         <motion.p
-          className="text-lg text-white/80 max-w-4xl mb-16"
+        className="text-xs text-white/80 font-light max-w-4xl mb-16"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -95,7 +107,7 @@ export default function ServicesSection() {
               <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-blue-950/50 to-black/80 border-2 border-blue-700/30 shadow-lg shadow-blue-900/20">
                 {/* Top Left Glow Effect - Increased brightness and size */}
                 <motion.div
-                  className="absolute top-[-15%] left-[15%] pointer-events-none"
+                  className="absolute top-[-45%] left-[-10%] pointer-events-none"
                   animate={{
                     opacity: [0.9, 1, 0.9],
                   }}
@@ -169,3 +181,4 @@ export default function ServicesSection() {
     </section>
   )
 }
+
