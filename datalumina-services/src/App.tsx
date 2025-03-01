@@ -5,7 +5,6 @@ import Insights from "./pages/Insights"
 import About from "./pages/About"
 // import Academy from "./pages/Academy"
 // import GenAILaunchpad from "./pages/GenAILaunchpad"
-import Contact from "./pages/Contact"
 import Navbar from "./components/Navbar"
 import { useEffect, useState } from "react"
 import BlankCaseStudy from "./pages/case-studies/BlankCaseStudy"
@@ -31,7 +30,6 @@ function App() {
             <Route path="/about" element={<About />} />
             {/* <Route path="/academy" element={<Academy />} />
             <Route path="/genai-launchpad" element={<GenAILaunchpad />} /> */}
-            <Route path="/contact" element={<Contact />} />
           </Routes>
           </main>
           <Footer />
