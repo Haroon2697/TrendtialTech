@@ -96,7 +96,7 @@ export default function CasesSection() {
             className="relative"
           >
             <motion.div
-              className="relative group rounded-3xl overflow-hidden bg-[#0a0a13] border border-[#1a2747]"
+              className="relative group rounded-3xl overflow-hidden bg-[#0a0a13] border border-[#2d498e]"
               onMouseMove={(e) => handleMouseMove(e, cases[0].id)}
               onMouseLeave={() => setActiveCard(null)}
             >
@@ -138,7 +138,7 @@ export default function CasesSection() {
                   )}
                 </div>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-blue-500/20 to-transparent" />
+              <div className="absolute bottom-0 left-[20%] right-0 w-[300px] h-[200px] rounded-full bg-gradient-to-b from-[#7199ff] via-[#004cfe] to-transparent opacity-80 blur-[100px]" />
             </motion.div>
           </motion.div>
 
@@ -192,18 +192,23 @@ export default function CasesSection() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="relative group rounded-3xl overflow-hidden bg-[#0a0a13] border border-[#1a2747] h-[600px]"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a13] via-transparent to-transparent" />
               <div className="absolute top-[-50%] right-[-20%] w-[400px] h-[400px] bg-blue-500/20 rounded-full blur-[100px]" />
               <div className="p-6 flex flex-col h-full justify-between relative z-10">
                 <div>
                   <span className="text-blue-400 mb-4 block font-light">Contact Us</span>
-                  <h3 className="text-2xl font-light text-white mb-6">
+                  <h3 className="text-2xl pr-16 font-light text-white mb-6">
                     Let's talk about how we can help you get from complexity to capability
                   </h3>
                 </div>
                 <motion.button
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-[#3b3b88] to-[#0a0a13] hover:from-[#0a0a13] hover:to-[#3b3b88] border border-[#8c8cea]  text-white px-6 py-3 rounded-full font-medium self-start"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-[#2d2d68] to-[#0a0a13] hover:from-[#0a0a13] hover:to-[#303070] border border-[#4747aa]  text-white px-6 py-3 rounded-full font-medium self-start"
                 >
+                    <div className="absolute right-[-20%] top-1/2 transform -translate-y-1/2 rotate-[10deg]">
+  <div className="w-[200px] h-[700px] rounded-[1%] bg-gradient-to-l from-[#004cfe] to-transparent opacity-100 blur-[5px]" />
+</div>
+
+
                   Contact us <ArrowRight className="w-4 h-4" />
                 </motion.button>
               </div>
