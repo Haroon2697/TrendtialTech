@@ -63,7 +63,7 @@ export default function ServicesSection() {
   }
 
   return (
-    <section className="relative w-full bg-black py-12 md:py-16 lg:py-20 overflow-hidden">
+    <section className="relative w-full bg-[#0a0a13] py-12 md:py-16 lg:py-20 overflow-hidden">
       {/* Top left component glow */}
       <div className="absolute top-0 left-0 w-[300px] md:w-[450px] lg:w-[600px] h-[300px] md:h-[450px] lg:h-[600px] rounded-full bg-gradient-to-br from-[#7199ff] via-[#004cfe] to-transparent opacity-80 blur-[120px] -translate-x-1/2 -translate-y-1/2" />
 

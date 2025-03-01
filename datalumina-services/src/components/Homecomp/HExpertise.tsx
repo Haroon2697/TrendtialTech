@@ -67,13 +67,13 @@ const HExpertise = () => {
       variants={sectionVariants}
     >
       {/* Right Top Glow Effect */}
-      <div className="absolute top-[-10%] right-[-10%]">
+      <div className="absolute top-[-20%] left-1/2 transform -translate-x-1/2">
         <div className="w-[500px] h-[300px] rounded-full bg-gradient-to-b from-[#7199ff] via-[#004cfe] to-transparent opacity-80 blur-[100px]" />
       </div>
-      
+
       <div className="max-w-7xl mx-auto relative z-10 mb-24">
         <motion.h2 
-          className="text-4xl md:text-5xl font-extralight mb-6" 
+          className="text-3xl md:text-4xl font-extralight mb-6" 
           variants={itemVariants}
         >
           Why our clients trust us
