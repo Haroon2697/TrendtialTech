@@ -2,23 +2,23 @@
 
 import TechStack from "../components/ServicesPage/TechStack"
 import ServicesGrid from "../components/ServicesPage/ServicesGrid"
-import CaseStudies from "../components/ServicesPage/CaseStudies"
 import ServiceHero from "../components/ServicesPage/ServiceHero"
+import HomeCases from "../components/Homecomp/HomeCases"
 const Services = () => {
 
  
 
   return (
-    <>
+
+    <div className="bg-[#0a0a13] ">
       <ServiceHero />
      <TechStack />
-
      <ServicesGrid />
+     <HomeCases />
 
-     <CaseStudies />
+    </div>
 
-
-     </>
+     
   )
 }
 

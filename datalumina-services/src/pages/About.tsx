@@ -3,7 +3,7 @@ import AboutEmpower from '../components/About/AboutEmpower'
 import AboutTeam from '../components/About/AboutTeam'
 function About() {
   return (
-    <div>
+    <div className="bg-[#0a0a13]">
         <AboutHero />
         <AboutEmpower />
         <AboutTeam />

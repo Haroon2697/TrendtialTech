@@ -20,7 +20,7 @@ function App() {
   }, [])
   return (
     <Router>
-      <div className="min-h-screen bg-dark-blue text-white relative overflow-hidden">
+      <div className="min-h-screen bg-[#0a0a13] text-white relative overflow-hidden">
         <AnimatedBackground />
         <div className="relative z-10">
         <Navbar />
