@@ -1,13 +1,12 @@
-import AboutHero from '../components/AboutHero'
-import AboutEmpower from '../components/AboutEmpower'
-import AboutTeam from '../components/AboutTeam'
-
+import AboutHero from '../components/About/AboutHero'
+import AboutEmpower from '../components/About/AboutEmpower'
+import AboutTeam from '../components/About/AboutTeam'
 function About() {
   return (
-    <div>
-      <AboutHero />
-      <AboutEmpower />
-      <AboutTeam />
+    <div className="bg-[#0a0a13]">
+        <AboutHero />
+        <AboutEmpower />
+        <AboutTeam />
     </div>
   )
 }

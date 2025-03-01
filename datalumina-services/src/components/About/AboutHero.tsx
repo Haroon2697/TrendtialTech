@@ -31,7 +31,7 @@ export default function AboutHero() {
   }, []);
 
   return (
-    <div className="h-[80vh] w-full bg-[#0a0a13] flex items-center justify-center px-4 md:px-8 py-10 overflow-hidden relative">
+    <div className="h-[80vh] w-full flex items-center justify-center px-4 md:px-8 py-10 overflow-hidden relative">
       {/* Render Stars */}
       {stars.map((star) => (
         <motion.div

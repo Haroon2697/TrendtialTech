@@ -19,11 +19,12 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
+    { name: "Home", path: "/" },
     { name: "Services", path: "/services" },
     { name: "Insights", path: "/insights" },
     { name: "About", path: "/about" },
-    { name: "Academy", path: "/academy" },
-    { name: "GenAI Launchpad", path: "/genai-launchpad" },
+    // { name: "Academy", path: "/academy" },
+    // { name: "GenAI Launchpad", path: "/genai-launchpad" },
   ];
 
   // Menu animation variants (changed to slide from top)
