@@ -3,8 +3,8 @@ import Services from "./pages/Services"
 import Home from "./pages/Home"
 import Insights from "./pages/Insights"
 import About from "./pages/About"
-import Academy from "./pages/Academy"
-import GenAILaunchpad from "./pages/GenAILaunchpad"
+// import Academy from "./pages/Academy"
+// import GenAILaunchpad from "./pages/GenAILaunchpad"
 import Contact from "./pages/Contact"
 import Navbar from "./components/Navbar"
 import AnimatedBackground from "./components/AnimatedBackground"
@@ -30,8 +30,8 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/insights" element={<Insights />} />
             <Route path="/about" element={<About />} />
-            <Route path="/academy" element={<Academy />} />
-            <Route path="/genai-launchpad" element={<GenAILaunchpad />} />
+            {/* <Route path="/academy" element={<Academy />} />
+            <Route path="/genai-launchpad" element={<GenAILaunchpad />} /> */}
             <Route path="/contact" element={<Contact />} />
           </Routes>
           </main>

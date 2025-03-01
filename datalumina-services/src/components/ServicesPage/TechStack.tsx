@@ -13,44 +13,44 @@ const TechStack = () => {
 
   const techItems = [
     {
-      icon: "/Icons/react.png",
-      alt: "React",
-      size: "w-[48px] h-[48px]", // Increased to 18 (equivalent size)
+      icon: "/Icons/ai.png",
+      alt: "AI & ML",
+      size: "w-[48px] h-[48px]",
       color: "bg-blue-600",
     },
     {
-      icon: "/Icons/docker.png",
-      alt: "Docker",
+      icon: "/Icons/data-analytics.png",
+      alt: "Data Analytics",
       size: "w-[64px] h-[64px]",
       color: "bg-blue-600",
     },
     {
-      icon: "/Icons/mysql.png",
-      alt: "MySQL",
+      icon: "/Icons/cloud.png",
+      alt: "Cloud Solutions",
       size: "w-[72px] h-[72px]",
       color: "bg-blue-600",
     },
     {
-      icon: "/Icons/python.png",
-      alt: "Python",
+      icon: "/Icons/automation.png",
+      alt: "Automation",
       size: "w-[80px] h-[80px]",
       color: "bg-blue-600",
     },
     {
-      icon: "/Icons/php.png",
-      alt: "PHP",
+      icon: "/Icons/consulting.png",
+      alt: "Consulting",
       size: "w-[72px] h-[72px]",
       color: "bg-blue-600",
     },
     {
-      icon: "/Icons/nodejs.png",
-      alt: "Node.js",
+      icon: "/Icons/integration.png",
+      alt: "System Integration",
       size: "w-[64px] h-[64px]",
       color: "bg-blue-600",
     },
     {
-      icon: "/Icons/mongodb.png",
-      alt: "MongoDB",
+      icon: "/Icons/security.png",
+      alt: "Security",
       size: "w-[48px] h-[48px]",
       color: "bg-blue-600",
     },
@@ -72,9 +72,9 @@ const TechStack = () => {
 
         {/* Title with increased z-index and white color */}
         <h2 className="text-3xl md:text-3xl lg:text-3xl font-light mb-44 text-white relative z-20">
-          We tackle data challenges
+          Comprehensive tech solutions
           <br />
-          across the full stack
+          for modern enterprises
         </h2>
 
         <div className="relative h-[0px]">
